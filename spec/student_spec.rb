@@ -1,7 +1,7 @@
 require 'rspec'
 require 'date'
 require_relative '../app/models/student'
-
+# require 'debugger'
 
 describe Student, "#name and #age" do
 
@@ -27,6 +27,7 @@ describe Student, "#name and #age" do
   end
 
   it "should be the right age" do
+    # debugger
     now = Date.today
     age = now.year - @student.birthday.year - ((now.month > @student.birthday.month || (now.month == @student.birthday.month && now.day >= @student.birthday.day)) ? 0 : 1)
     @student.age.should == age
